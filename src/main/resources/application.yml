@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    #设置配置文件
+    active: @profileActive@
+  application:
+    name: commons
+  #设置jackson格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+environment: @profileActive@
+
+mybatis:
+  type-aliases-package: org.huangding.commons.data.pojo.po
+  #使用xml添加以下配置
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
